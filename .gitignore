@@ -3,3 +3,6 @@ Thumbs.db
 node_modules/
 .env
 *.log
+
+# Local Netlify folder
+.netlify

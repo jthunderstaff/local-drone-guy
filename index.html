@@ -12,6 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
   <header class="site-header" id="top">
@@ -40,9 +41,12 @@
 
   <section class="hero">
     <div class="hero-bg" aria-hidden="true">
+      <spline-viewer class="hero-spline" id="heroSpline" url="https://prod.spline.design/UWoeqiir20o49Dah/scene.splinecode" loading="lazy" events-target="global"></spline-viewer>
+      <canvas id="heroCanvas" class="hero-canvas" aria-hidden="true"></canvas>
+      <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.97/build/spline-viewer.js"></script>
       <div class="hero-gradient"></div>
     </div>
-    <div class="container hero-content">
+    <div class="container hero-content" data-aos="fade-up" data-aos-duration="1200">
       <h1>Live Events from Every Angle</h1>
       <p class="hero-sub">Professional drone photography and videography for weddings, festivals, sports, real estate, and corporate events. Licensed. Insured. Local.</p>
       <div class="hero-actions">
@@ -130,18 +134,20 @@
     </div>
   </section>
 
-  <section class="gallery" id="gallery">
+  <section class="gallery" id="gallery" data-aos="fade-up">
     <div class="container">
-      <h2 class="section-title">Recent Aerial Work</h2>
-      <div class="gallery-grid">
-        <div class="gallery-item"><img src="images/gallery_wedding.png" alt="Aerial view of an outdoor wedding ceremony" loading="lazy"></div>
-        <div class="gallery-item"><img src="images/gallery_festival.png" alt="Aerial view of a festival crowd and stage" loading="lazy"></div>
-        <div class="gallery-item"><img src="images/gallery_sports.png" alt="Aerial view of a soccer tournament" loading="lazy"></div>
-        <div class="gallery-item"><img src="images/gallery_realestate.png" alt="Aerial view of a luxury property" loading="lazy"></div>
-        <div class="gallery-item"><img src="images/gallery_sunset.png" alt="Aerial view of a beach event at sunset" loading="lazy"></div>
-        <div class="gallery-item"><img src="images/gallery_corporate.png" alt="Aerial view of a corporate grand opening" loading="lazy"></div>
+      <h2 class="section-title" data-aos="fade-down">Recent Aerial Work</h2>
+      <div class="slider" style="--width: 24rem; --height: 16rem; --quantity: 6;" data-aos="fade-up">
+        <div class="list">
+          <div class="item" style="--position: 1"><img src="images/gallery_wedding.png" alt="Aerial view of an outdoor wedding ceremony" loading="lazy"></div>
+          <div class="item" style="--position: 2"><img src="images/gallery_festival.png" alt="Aerial view of a festival crowd and stage" loading="lazy"></div>
+          <div class="item" style="--position: 3"><img src="images/gallery_sports.png" alt="Aerial view of a soccer tournament" loading="lazy"></div>
+          <div class="item" style="--position: 4"><img src="images/gallery_realestate.png" alt="Aerial view of a luxury property" loading="lazy"></div>
+          <div class="item" style="--position: 5"><img src="images/gallery_sunset.png" alt="Aerial view of a beach event at sunset" loading="lazy"></div>
+          <div class="item" style="--position: 6"><img src="images/gallery_corporate.png" alt="Aerial view of a corporate grand opening" loading="lazy"></div>
+        </div>
       </div>
-      <div class="gallery-cta"><a href="#contact" class="btn btn-primary">Want this for your event?</a></div>
+      <div class="gallery-cta" data-aos="zoom-in"><a href="#contact" class="btn btn-primary">Want this for your event?</a></div>
     </div>
   </section>
 
@@ -340,6 +346,8 @@
     </div>
   </footer>
 
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>AOS.init({ once: true, offset: 80, duration: 900 });</script>
   <script src="script.js"></script>
 </body>
 </html>
